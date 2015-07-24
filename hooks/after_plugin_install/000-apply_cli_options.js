@@ -86,9 +86,11 @@ module.exports = function(context) {
         var commandlineVariablesList = nopt({ 'variable': Array }, {}, argumentsString.split(' '))['variable'],
             commandlineVariables = {};
 
-        commandlineVariablesList.forEach(function(element) {
-            commandlineVariables[element.split('=')[0].toUpperCase()] = element.split('=')[1];
-        });
+        if (commandlineVariablesList && commandlineVariablesList.forEach) {
+            commandlineVariablesList.forEach(function (element) {
+                commandlineVariables[element.split('=')[0].toUpperCase()] = element.split('=')[1];
+            });
+        }
 
         return commandlineVariables;
     };
