@@ -35,7 +35,7 @@ module.exports = function(context) {
         XmlHelpers = context.requireCordovaModule("cordova-lib/src/util/xml-helpers"),
         CordovaCli = path.dirname(path.dirname(process.mainModule.filename)),
         nopt = require(path.join(CordovaCli, 'node_modules', 'nopt')),
-        _ = require(path.join(CordovaCli, 'node_modules', 'underscore'));
+        _ = require('underscore');
 
     /** @defaults */
     var argumentsString = context.cmdLine,
